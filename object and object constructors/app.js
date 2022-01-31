@@ -1,8 +1,3 @@
-const book=document.getElementById('name');
-const author=document.getElementById('author');
-const status=document.getElementById('status').value;
-
-
 
 //book constructor
 function Book(name, author, status){
@@ -16,7 +11,7 @@ function UI() {}
 
 //add book to list
 UI.prototype.addBookToList=function(book){
-    const list=document.getElementById('library');
+    const list=document.getElementById('book-list');
       // Create tr element
   const row = document.createElement('tr');
   // Insert cols
@@ -32,8 +27,14 @@ UI.prototype.addBookToList=function(book){
 
 //event listener for add book
 document.getElementById('library').addEventListener('submit', function(e){
-    console.log(book.value)
-    console.log(author.value)
-    console.log(status)
+    const name=document.getElementById('name').value;
+    const author=document.getElementById('author').value;
+    const status=document.getElementById('status').value;
+
+
+    const book= new Book (name, author, status);
+    const ui= new UI()
+    ui.addBookToList(book);
+    
     e.preventDefault();
     })

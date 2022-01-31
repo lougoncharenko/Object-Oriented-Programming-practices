@@ -1,0 +1,116 @@
+
+html {
+    font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222; }
+  
+  
+
+  
+  body {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    text-align: center;
+  }
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box; }
+
+  .column,
+  .columns {
+    width: 100%;
+    float: left;
+    box-sizing: border-box; }
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+    form{
+        display: flex;
+        margin-bottom: .5rem;
+        font-weight: 600; 
+        height: 60px;
+        padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+        background-color: rgb(169, 235, 64);
+        border: 1px solid #D1D1D1;
+        border-radius: 4px;
+        box-shadow: none;
+        box-sizing: border-box; }
+
+
+        /* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+    
+        input[type="submit"]{
+            display: inline-block;
+            height: 38px;
+            padding: 0 30px;
+            color: #555;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 38px;
+            letter-spacing: .1rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            white-space: nowrap;
+            background-color: transparent;
+            border-radius: 4px;
+            border: 1px solid #bbb;
+            cursor: pointer;
+            box-sizing: border-box;    
+        }
+
+        input[type="submit"]:hover{
+            color: #333;
+            border-color: #888;
+            outline: 0;
+        }
+  
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+    
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+
+.twelve-columns{
+    margin-top: 3.5rem;
+}
+
+
+
+.delete {
+    border: none;
+    background-color: rgb(228, 26, 103);
+    color: white;
+  }
+  .delete:hover {
+    background-color: rgb(207, 24, 94);
+    color: white;
+  }
