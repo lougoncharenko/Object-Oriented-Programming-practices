@@ -1,42 +1,39 @@
-const budget={
-    Rent: 900,
-    Groceries: 400,
-    Gas: 400,
-    Phone: 60,
+const book=document.getElementById('name');
+const author=document.getElementById('author');
+const status=document.getElementById('status').value;
+
+
+
+//book constructor
+function Book(name, author, status){
+this.name=name;
+this.author=author;
+this.status=status;
 }
 
-//dot notation
-console.log(budget.Rent);
+// UI Constructor
+function UI() {}
 
-const rent= budget.Rent
-console.log(rent)
+//add book to list
+UI.prototype.addBookToList=function(book){
+    const list=document.getElementById('library');
+      // Create tr element
+  const row = document.createElement('tr');
+  // Insert cols
+  row.innerHTML = `
+    <td>${book.name}</td>
+    <td>${book.author}</td>
+    <td>${book.status}</td>
+    <td><a href="#" class="delete">X<a></td>
+  `;
 
-
-function Budget(rent, groceries, gas, bills){
-    this.rent=rent,
-    this.groceries=groceries,
-    this.gas=gas,
-    this.bills=bills
+  list.appendChild(row);
 }
 
-
-const februaryBudget= new Budget(900,200,300,230)
-console.log(februaryBudget);
-
-Budget.prototype.addExpenses=function(){
-  return Number(this.rent + this.groceries + this.gas + this.bills)
-}
-
-console.log(februaryBudget.addExpenses());
-
-Budget.prototype.reminder=function(){
-    console.log('Stop spending so much money!!!')
-}
-
-februaryBudget.reminder();
-
-februaryBudget.valentinesDay=700;
-
-console.log(februaryBudget);
-
-
+//event listener for add book
+document.getElementById('library').addEventListener('submit', function(e){
+    console.log(book.value)
+    console.log(author.value)
+    console.log(status)
+    e.preventDefault();
+    })
