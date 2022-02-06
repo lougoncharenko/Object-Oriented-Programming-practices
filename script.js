@@ -33,6 +33,7 @@ User1.prototype.greeting=function(){
     console.log(`Hello! I am ${this.name}`);
 }
 
+
 let user1= new User1('Cory');
 user1.greeting();
 
@@ -99,3 +100,52 @@ p2.displayName; // undefined
 p2.distance;    // undefined
 console.log(Point.displayName);      // "Point"
 console.log(Point.distance(p1, p2)); // 7.0710678118654755
+
+
+// Binding this with prototype and static methods
+class Animal{
+    speak(){
+        return this;
+    }
+    static eat(){
+        return this;
+    }
+}
+
+let obj= new Animal();
+obj.speak(); // the Animal object
+speak(); // undefined
+
+Animal.eat() // class Animal
+let eat = Animal.eat;
+eat(); // undefined
+
+//Instance properties
+//Instance properties must be defined inside of class methods:
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+
+//public field declarations
+class Rectangle {
+    height = 0;
+    width;
+    constructor(height, width) {
+      this.height = height;
+      this.width = width;
+    }
+  }
+
+  //privage field declaration
+  class Rectangle {
+    #height = 0;
+    #width;
+    constructor(height, width) {
+      this.#height = height;
+      this.#width = width;
+    }
+  }
